@@ -1,27 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@200;300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FAF9F6;
+  --foreground: #111827;
+  --accent-gold: #C29D74;
+  --accent-gold-soft: #F4ECE4;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply text-foreground bg-[#FAF9F6] overflow-x-hidden;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: 'Cormorant Garamond', serif;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* Specific styling for the picture's theme */
+.heading-main {
+  @apply text-[45px] md:text-[58px] font-medium text-[#111827] leading-tight tracking-[0.02em];
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.heading-underline {
+  @apply w-[100px] h-[1px] bg-[#C29D74] mx-auto my-8;
 }
+
+.heading-underline-left {
+  @apply w-[80px] h-[1.5px] bg-[#C29D74] my-8;
+}
+
+.btn-luxury {
+  @apply px-12 py-3 rounded-full border border-gold text-gold uppercase tracking-[0.2em] text-[12px] font-medium transition-all duration-300 hover:bg-gold hover:text-white inline-block;
+}
+
+/* The exact image offset from the picture */
+.image-wrapper {
+  @apply relative inline-block;
+}
+
+.image-offset-bg {
+  @apply absolute -bottom-5 -right-5 w-full h-full bg-[#C29D74] -z-10 rounded-sm opacity-60;
+}
+
+.image-offset-bg-left {
+  @apply absolute -bottom-5 -left-5 w-full h-full bg-[#C29D74] -z-10 rounded-sm opacity-60;
+}
+
+.text-content {
+  @apply text-[17px] leading-[1.8] text-[#374151] font-light tracking-wide;
+}
+
+.text-content b, .text-content strong {
+  @apply font-semibold text-[#111827];
+}
+
+/* Services section specific styles */
+.service-card {
+  @apply bg-white p-12 flex flex-col items-center text-center border border-[#E5E7EB] rounded-sm min-h-[420px] justify-center transition-all duration-700 ease-out hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:-translate-y-4 hover:border-gold/30 relative overflow-hidden;
+}
+
+.service-card::before {
+  content: '';
+  @apply absolute top-0 left-0 w-full h-[2px] bg-gold scale-x-0 transition-transform duration-500 origin-left;
+}
+
+.service-card:hover::before {
+  @apply scale-x-100;
+}
+
+.service-icon {
+  @apply w-12 h-12 mb-10 text-[#C29D74] transition-all duration-500;
+}
+
+.service-card:hover .service-icon {
+  @apply scale-110 text-gold;
+}
+
+.service-card h3 {
+  @apply text-2xl mb-6 transition-colors duration-300;
+}
+
+.service-card:hover h3 {
+  @apply text-gold;
+}
+
+.service-card p {
+  @apply text-[15px] font-light leading-relaxed text-[#4B5563] transition-opacity duration-300;
+}
+
