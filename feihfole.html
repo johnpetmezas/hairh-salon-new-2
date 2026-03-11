@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic Hairh | Launcher</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Outfit:wght@300;400&display=swap');
+        
+        :root {
+            --gold: #C29D74;
+            --bg: #FAF9F6;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-hieght: 100vh;
+            height: 100vh;
+            background-color: var(--bg);
+            font-family: 'Outfit', sans-serif;
+            color: #111827;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            letter-spacing: -0.05em;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        h1 span {
+            font-style: italic;
+            color: var(--gold);
+        }
+
+        p {
+            text-transform: uppercase;
+            letter-spacing: 0.4em;
+            font-size: 0.8rem;
+            color: #6B7280;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1.25rem 3rem;
+            background-color: var(--gold);
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(194, 157, 116, 0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(194, 157, 116, 0.3);
+            background-color: #b38e65;
+        }
+
+        .status {
+            margin-top: 2rem;
+            font-size: 0.7rem;
+            color: #9CA3AF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>MAGIC <span>HAIRH</span></h1>
+        <p>Experience the Transformation</p>
+        
+        <a href="http://localhost:3000" class="btn" id="launchBtn">Launch Website</a>
+        
+        <div class="status">Ensure the development server is running</div>
+    </div>
+
+    <script>
+        // Optional: Auto-redirect after a short delay
+        const btn = document.getElementById('launchBtn');
+        setTimeout(() => {
+            window.location.href = "http://localhost:3000";
+        }, 1500);
+    </script>
+</body>
+</html>

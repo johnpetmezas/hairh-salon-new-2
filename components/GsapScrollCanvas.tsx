@@ -26,19 +26,36 @@ export default function GsapScrollCanvas() {
     let loadedCount = 0;
 
     const sequence = [...Array(TOTAL_FRAMES)].map((_, i) => FRAME_PATH(i));
+    let errorCount = 0;
+
+    const fallbackTimer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 2000);
+
+    const checkComplete = () => {
+      if (loadedCount + errorCount === TOTAL_FRAMES) {
+        clearTimeout(fallbackTimer);
+        // Only keep successfully loaded images
+        setImages(loadedImages.filter(img => img && img.naturalWidth > 0));
+        setIsLoaded(true);
+      }
+    };
 
     sequence.forEach((src, index) => {
       const img = new Image();
       img.src = src;
       img.onload = () => {
         loadedCount++;
-        if (loadedCount === TOTAL_FRAMES) {
-          setImages(loadedImages);
-          setIsLoaded(true);
-        }
+        loadedImages[index] = img;
+        checkComplete();
       };
-      loadedImages[index] = img;
+      img.onerror = () => {
+        errorCount++;
+        checkComplete();
+      };
     });
+
+    return () => clearTimeout(fallbackTimer);
   }, []);
 
   const render = useCallback(() => {
@@ -110,11 +127,18 @@ export default function GsapScrollCanvas() {
 
   return (
     <div ref={containerRef} className="relative w-full h-[500vh]">
-      <div className="sticky top-0 left-0 w-full h-[100dvh] overflow-hidden">
+      <div 
+        className="sticky top-0 left-0 w-full h-[100dvh] overflow-hidden bg-cover bg-center"
+        style={{ backgroundImage: images.length === 0 ? 'url(/hair_art.png)' : 'none' }}
+      >
         <canvas
           ref={canvasRef}
           className="absolute inset-0 w-full h-full"
         />
+        
+        {images.length === 0 && (
+          <div className="absolute inset-0 bg-[#111827]/40 backdrop-blur-sm z-0" />
+        )}
         
         {/* Loading State Overlay */}
         {!isLoaded && (
@@ -126,8 +150,8 @@ export default function GsapScrollCanvas() {
           </div>
         )}
 
-        {/* Content Overlays can be added here */}
-        <div className="relative z-10 pointer-events-none h-full flex flex-col items-center justify-center text-center p-6 bg-black/10">
+        {/* Content Overlays */}
+        <div className="relative z-10 pointer-events-none h-full flex flex-col items-center justify-center text-center p-6 bg-black/5">
            <div className="pointer-events-none">
               <h1 className="text-5xl md:text-8xl lg:text-9xl mb-4 font-serif font-bold tracking-tighter text-white drop-shadow-2xl">
                 MAGIC <span className="italic text-gold">HAIRH</span>
