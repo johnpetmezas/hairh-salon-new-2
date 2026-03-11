@@ -71,7 +71,7 @@ export default function Scrollytelling() {
           </h2>
           <p className="text-lg md:text-xl text-white/80 font-light leading-relaxed">
             With over a decade of experience in European styling, Rania Gkika brings a touch of magic to Corinth. 
-            Magic Hairh is not just a salon; it's a sanctuary of luxury where modern techniques meet timeless elegance.
+            Magic Hairh is not just a salon; it&apos;s a sanctuary of luxury where modern techniques meet timeless elegance.
           </p>
         </motion.div>
       </section>
@@ -112,7 +112,7 @@ export default function Scrollytelling() {
           </div>
           <h2 className="text-5xl md:text-8xl font-serif mb-8 italic">5-Star Excellence</h2>
           <p className="text-xl md:text-2xl text-white/70 max-w-2xl mx-auto font-light leading-relaxed italic">
-            "The best hair salon in Corinth. Rania is a true artist who understands exactly what you need."
+            &quot;The best hair salon in Corinth. Rania is a true artist who understands exactly what you need.&quot;
           </p>
           <div className="mt-12 flex justify-center gap-8 text-sm uppercase tracking-widest text-gold">
             <span>Google verified</span>

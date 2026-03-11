@@ -138,7 +138,7 @@ export default function Home() {
                 <PenTool className="service-icon" />
                 <h3 className="font-serif font-medium">Balayage & Highlights</h3>
                 <p>
-                  Our signature service. Masterfully blended sun-kissed looks tailored to your hair's movement.
+                  Our signature service. Masterfully blended sun-kissed looks tailored to your hair&apos;s movement.
                 </p>
               </div>
 
