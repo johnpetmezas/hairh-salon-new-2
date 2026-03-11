@@ -24,7 +24,7 @@
 
 /* Specific styling for the picture's theme */
 .heading-main {
-  @apply text-[45px] md:text-[58px] font-medium text-[#111827] leading-tight tracking-[0.02em];
+  @apply text-[36px] sm:text-[45px] md:text-[58px] font-medium text-[#111827] leading-tight tracking-[0.02em];
 }
 
 .heading-underline {
@@ -62,7 +62,7 @@
 
 /* Services section specific styles */
 .service-card {
-  @apply bg-white p-12 flex flex-col items-center text-center border border-[#E5E7EB] rounded-sm min-h-[420px] justify-center transition-all duration-700 ease-out hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:-translate-y-4 hover:border-gold/30 relative overflow-hidden;
+  @apply bg-white p-8 md:p-12 flex flex-col items-center text-center border border-[#E5E7EB] rounded-sm min-h-[360px] md:min-h-[420px] justify-center transition-all duration-700 ease-out hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:-translate-y-4 hover:border-gold/30 relative overflow-hidden;
 }
 
 .service-card::before {

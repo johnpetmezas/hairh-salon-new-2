@@ -38,9 +38,9 @@ export default function Home() {
       <div className="relative z-10 bg-[#FAF9F6]">
         
         {/* 1. The Art of Hair Section */}
-        <section className="py-32 px-6 max-w-7xl mx-auto overflow-hidden">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-16 lg:gap-24">
-            <div className="flex-1 max-w-xl">
+        <section className="py-16 md:py-32 px-6 max-w-6xl mx-auto overflow-hidden">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 lg:gap-16">
+            <div className="flex-1 max-w-xl w-full">
               <h2 className="heading-main mb-2">The Art of Hair</h2>
               <div className="heading-underline-left"></div>
               
@@ -58,12 +58,12 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="flex-1 flex justify-center lg:justify-end">
-              <div className="image-wrapper max-w-[500px] w-full">
+            <div className="flex-1 flex justify-center w-full">
+              <div className="image-wrapper max-w-[500px] w-[calc(100%-20px)] md:w-full mr-[20px] md:mr-0">
                 <div className="image-offset-bg"></div>
                 <div className="relative aspect-[4/5] w-full rounded-sm overflow-hidden shadow-sm">
                   <Image 
-                    src="/hair_art.png" 
+                    src="/klomallo ena.jpg" 
                     alt="The Art of Hair" 
                     fill 
                     className="object-cover"
@@ -76,10 +76,10 @@ export default function Home() {
         </section>
 
         {/* 2. The Art of Nails Section */}
-        <section className="py-32 px-6 max-w-7xl mx-auto overflow-hidden bg-white/40">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-16 lg:gap-24">
-            <div className="flex-1 order-2 md:order-1 flex justify-center lg:justify-start">
-              <div className="image-wrapper max-w-[500px] w-full">
+        <section className="py-16 md:py-32 px-6 max-w-6xl mx-auto overflow-hidden bg-white/40">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 lg:gap-16">
+            <div className="flex-1 order-2 md:order-1 flex justify-center w-full">
+              <div className="image-wrapper max-w-[500px] w-[calc(100%-20px)] md:w-full ml-[20px] md:ml-0">
                 <div className="image-offset-bg-left"></div>
                 <div className="relative aspect-square w-full rounded-sm overflow-hidden shadow-sm">
                   <Image 
@@ -92,7 +92,7 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="flex-1 order-1 md:order-2 max-w-xl">
+            <div className="flex-1 order-1 md:order-2 max-w-xl w-full">
               <h2 className="heading-main mb-2">The Art of Nails</h2>
               <div className="heading-underline-left"></div>
               
@@ -113,9 +113,9 @@ export default function Home() {
         </section>
 
         {/* 3. Our Premium Services Section */}
-        <section className="py-32 px-6 bg-white overflow-hidden">
+        <section className="py-16 md:py-32 px-6 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-24">
+            <div className="text-center mb-16 md:mb-24">
               <h2 className="heading-main font-serif">Signature Services</h2>
               <div className="heading-underline"></div>
               <p className="text-sm uppercase tracking-[0.4em] text-gold font-medium">Elevate Your Presence</p>
@@ -167,10 +167,10 @@ export default function Home() {
 
 
         {/* Unified Contact section */}
-        <section id="contact" className="py-32 px-6 border-t border-[#E5E7EB]">
+        <section id="contact" className="py-16 md:py-32 px-6 border-t border-[#E5E7EB]">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="heading-main mb-12">Get In Touch</h2>
-            <div className="flex flex-col md:flex-row justify-center gap-16 items-center mb-20 text-[18px]">
+            <div className="flex flex-col md:flex-row justify-center gap-8 md:gap-16 items-center mb-16 md:mb-20 text-[18px]">
                <div className="flex items-center gap-4">
                   <Phone className="w-5 h-5 text-gold" />
                   <span className="font-medium">2741 081401</span>

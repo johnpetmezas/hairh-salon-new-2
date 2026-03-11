@@ -110,7 +110,7 @@ export default function GsapScrollCanvas() {
 
   return (
     <div ref={containerRef} className="relative w-full h-[500vh]">
-      <div className="sticky top-0 left-0 w-full h-screen overflow-hidden">
+      <div className="sticky top-0 left-0 w-full h-[100dvh] overflow-hidden">
         <canvas
           ref={canvasRef}
           className="absolute inset-0 w-full h-full"
@@ -127,7 +127,7 @@ export default function GsapScrollCanvas() {
         )}
 
         {/* Content Overlays can be added here */}
-        <div className="relative z-10 pointers-events-none h-full flex flex-col items-center justify-center text-center p-6 bg-black/10">
+        <div className="relative z-10 pointer-events-none h-full flex flex-col items-center justify-center text-center p-6 bg-black/10">
            <div className="pointer-events-none">
               <h1 className="text-5xl md:text-8xl lg:text-9xl mb-4 font-serif font-bold tracking-tighter text-white drop-shadow-2xl">
                 MAGIC <span className="italic text-gold">HAIRH</span>
